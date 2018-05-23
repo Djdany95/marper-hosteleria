@@ -30,12 +30,6 @@
     color: #252c41
 }
 
-.sombra {
-    -webkit-box-shadow: 0 -10px 80px 0 #252c41;
-    -moz-box-shadow: 0 -10px 80px 0 #252c41;
-    box-shadow: 0 -10px 80px 0 #252c41;
-}
-
 .filtros{
     width: 100%;
     overflow: hidden;

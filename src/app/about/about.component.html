@@ -1,11 +1,11 @@
-<div class="container totalH">
-    <div class="row totalH">
+<div class="container">
+    <div class="row">
         <div class="col-12 col-md-5 containerDatos">
             <h1>MARPER HOSTELERÍA</h1>
 
-            <h4>DATOS</h4>
-            <h4>DATOS</h4>
-            <h4>DATOS</h4>
+            <h4><a href="https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=42.2225111,-8.7270627&heading=-45&pitch=38&fov=80">DIRECCION</a></h4>
+            <h4><a href="tel:+34606390908">TELEFONO</a></h4>
+            <h4><a href="mailto:comercialmarper@gmail.com">EMAIL</a></h4>
             <h4>DATOS</h4>
             <h4>DATOS</h4>
             <br>
@@ -27,7 +27,6 @@
                     <textarea type="text" class="form-control" id="msg" placeholder="Mensaje..." [formControl]="msgControl"></textarea>
                     <small class="smError" *ngIf="msgControl.hasError('required')">*Obligatorio</small>
                 </div>
-
                 <button type="button" class="btn btn-primary" (click)='enviarMensaje()'>Enviar</button>
             </form>
         </div>

@@ -9,3 +9,53 @@ body {
 html {
     height: 100%
 }
+
+.navbar{
+    font-family: 'Montserrat'; background-color: rgb(37, 44, 65);
+}
+
+.sombra {
+    -webkit-box-shadow: 0 -10px 60px 0 #252c41;
+    -moz-box-shadow: 0 -10px 60px 0 #252c41;
+    box-shadow: 0 -10px 60px 0 #252c41;
+}
+
+.smError{
+    color:#f1404b;
+}
+
+.smOpcional{
+    color:rgba(37, 44, 65, 0.5)
+}
+
+.modal{
+    display: block
+}
+
+.modal-content{
+    background-color: rgb(244, 245, 249); color:#252c41;
+}
+
+.equis{
+    color:rgb(241, 64, 75)
+}
+
+.modalRef{
+    padding-right: 100px
+}
+
+.card{
+    margin-bottom: 10px
+}
+
+.cHeader{
+    color:#252c41;background-color: rgb(241, 64, 75); border-bottom: 1px solid rgba(0,0,0,.125); border-top-right-radius: 5px;border-top-left-radius: 5px
+}
+
+.cFooter{
+    color:#f4f5f9;background-color: #252c41; border-bottom: 1px solid rgba(0,0,0,.125); border-bottom-right-radius: 5px;border-bottom-left-radius: 5px
+}
+
+.colorDDD{
+    color: #dddfe6
+}

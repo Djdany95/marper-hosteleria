@@ -18,6 +18,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgProgressModule } from '@ngx-progressbar/core';
 import { NgProgressHttpModule } from '@ngx-progressbar/http';
+import { FooterSmComponent } from './footer-sm/footer-sm.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { NgProgressHttpModule } from '@ngx-progressbar/http';
     AboutComponent,
     BannerComponent,
     AdminComponent,
-    PortadaComponent
+    PortadaComponent,
+    FooterSmComponent
   ],
   imports: [
     BrowserModule,
@@ -42,8 +44,7 @@ import { NgProgressHttpModule } from '@ngx-progressbar/http';
       color: '#f1404b',
       spinnerPosition: 'left'
     }),
-    NgProgressHttpModule,
-    // apiKey: 'AIzaSyCw2AfOipJlYd-X5iEESrM4HZwf3-zud_c'
+    NgProgressHttpModule
   ],
   providers: [HttpClient, ProductosService, ContactoService, AdminService],
   bootstrap: [AppComponent]

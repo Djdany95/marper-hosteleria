@@ -1,21 +1,23 @@
-<nav class="navbar sticky-top navbar-expand-sm">
+<nav class="navbar sticky-top navbar-expand-sm sombra">
 
     <div class="order-0">
         <a class="navbar-brand" href="#" (click)="gotoPortada()">
-            <strong class="colorDDD"> MarperHosteler&iacute;a</strong>
+            <img class="mr-2" src="http://via.placeholder.com/50x50" alt="marper"><strong class="d-none d-md-inline-block colorDDD"> MarperHosteler&iacute;a</strong>
         </a>
-
     </div>
 
     <div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <i class="material-icons"  style="color: #f1404b; font-size: 48px;">
+                menu
+                </i>
+        </button>
     </div>
     <div class="collapse navbar-collapse w-100 order-1 order-md-0" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link colorDDD" href="#" (click)="gotoAbout()">Nosotros</a>
+                <a class="nav-link" href="#" style="color: #dddfe6" (click)="gotoAbout()">Nosotros</a>
             </li>
             <li class="nav-item">
                 <app-contacto></app-contacto>

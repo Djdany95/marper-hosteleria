@@ -5,19 +5,3 @@
 .inside{
     margin-top: 10px; padding: 15px; border: 2px solid rgba(0, 0, 0, 0.5); border-radius: 10px; background-color: #f4f5f9;
 }
-
-.modal{
-    display: block
-}
-
-.modal-content{
-    background-color: rgb(244, 245, 249); color:#252c41;
-}
-
-.equis{
-    color:rgb(241, 64, 75)
-}
-
-.modalRef{
-    padding-right: 100px
-}
