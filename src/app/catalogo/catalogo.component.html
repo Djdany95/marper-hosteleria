@@ -1,3 +1,105 @@
-<p>
-  catalogo works!
-</p>
+<div class="jumbotron jumbotron-fluid sombra" style="background-color: #f1404b">
+  <div class="container">
+    <h1 class="display-4" style="font-family: Montserrat Subrayada; color: #dddfe6">
+      <span style="color: #252c41">C</span>ATÁLOGO</h1>
+  </div>
+</div>
+
+<div class="container" style="padding: 20px; font-family: Montserrat; color: #252c41">
+
+  <div class="row justify-content-center" *ngIf="filtro!==''">
+    <div class="col-md-6" id="filtrado" style="padding-left: 30px">
+      <h3>Filtrando por
+        <span style="background-color: #252c41; color: #dddfe6" class="badge"> {{filtro}}</span>
+      </h3>
+    </div>
+    <div class="col-md-2" id="limpiar">
+      <button type="button" class="btn btn-outline-dark btn-sm" style="margin: 0px 5px 10px 15px" (click)="filtro=''; getProductos()">Limpiar</button>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="col-lg-2 pt-lg-5" id="colfiltros">
+      <div class="row" style="border: 2px solid rgba(0, 0, 0, 0.6); border-bottom: 0px; border-radius: 5px; border-bottom-left-radius: 0px; border-bottom-right-radius: 0px">
+        <div class="btn-group col-12" style="padding: 0px">
+          <button (click)="tipoFiltro='categorias'" [ngClass]="tipoFiltro==='categorias'? 'filtroCatHover': 'filtroCat'" class="btn btn-sm">
+            Categorías
+          </button>
+          <button (click)="tipoFiltro='marcas'" style="margin-left: 0.5px;" [ngClass]="tipoFiltro==='marcas'? 'filtroMarHover': 'filtroMar'" class="btn btn-sm">
+            Marcas
+          </button>
+        </div>
+      </div>
+
+      <div class="row" style="border: 2px solid rgba(0, 0, 0, 0.6); border-top: 0px; border-radius: 5px; border-top-left-radius: 0px; border-top-right-radius: 0px">
+        <div class="col-12 sombra" id="filtros" style="padding: 0px">
+          <ul style="padding: 10px 0px 0px 0px; list-style-type: none;" *ngIf="tipoFiltro==='marcas'">
+            <li *ngFor="let marca of marcas">
+              <button type="button" class="btn btn-link filtros" (click)="getProductos('marca', marca)"><i class="material-icons">
+                  filter_list
+                  </i> {{marca}}</button>
+            </li>
+          </ul>
+          <ul style="padding: 10px 0px 0px 0px; list-style-type: none;" *ngIf="tipoFiltro==='categorias'">
+            <li *ngFor="let categoria of categorias">
+              <button type="button" class="btn btn-link filtros" (click)="getProductos('categoria', categoria)"><i class="material-icons">
+                  filter_list
+                  </i> {{categoria}}</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-10" id="colmain">
+      <div class="row">
+        <div class="col-12" id="main" style="padding: 20px;">
+          <div class="row">
+
+            <div class="col-md-6 col-lg-4 col-xl-3" *ngFor="let producto of productos">
+              <div class="card" style="margin-bottom: 10px">
+                <div style="color:#252c41;background-color: rgb(241, 64, 75); border-bottom: 1px solid rgba(0,0,0,.125); border-top-right-radius: 5px;border-top-left-radius: 5px">
+                  <span class="ml-3">{{producto.categoria}}</span>
+                </div>
+                <img class="card-img-top" [src]="producto.imageUrl" alt="Card image cap" (click)="modalLightbox(producto.nombre, producto.referencia, producto.imageUrl)">
+                <div class="card-body">
+                  <h5 class="card-title">{{producto.nombre}}</h5>
+                  <span class="card-text">{{producto.marca}}</span>
+                </div>
+                <div style="color:#f4f5f9;background-color: #252c41; border-bottom: 1px solid rgba(0,0,0,.125); border-bottom-right-radius: 5px;border-bottom-left-radius: 5px">
+                  <small class="ml-3">REF.: {{producto.referencia}}</small>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="modalImage" tabindex="-1" role="dialog" aria-labelledby="modalImage" style="display: block" *ngIf="modal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" style="background-color: rgb(244, 245, 249); color:#252c41">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitle">{{modalNombre}}</h5>
+          <button type="button" class="close" (click)="modal=false" aria-label="Close">
+            <span style="color:rgb(241, 64, 75)" aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img [src]="modalImage" alt="..." style="width: 100%; height: 100%;">
+        </div>
+        <div class="modal-footer">
+          <span style="padding-right: 100px">REF.: {{modalRef}}</span>
+          <button type="button" class="btn btn-danger btn-sm" (click)="modal=false">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<ng-progress></ng-progress>

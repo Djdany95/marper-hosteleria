@@ -7,7 +7,6 @@ import { Producto } from '../models/producto';
   providedIn: 'root'
 })
 export class ProductosService {
-
   public url: string;
 
   constructor(private _http: HttpClient) {
@@ -50,11 +49,12 @@ export class ProductosService {
     );
   }
 
-  editSeries(referencia: string, producto: Producto): Observable<any> {
+  editProducto(referencia: string, producto: Producto): Observable<any> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this._http.put(
       this.url + 'producto/' + referencia,
       {
+        referencia: producto.referencia,
         nombre: producto.nombre,
         precio: producto.precio,
         categoria: producto.categoria,
@@ -66,7 +66,7 @@ export class ProductosService {
     );
   }
 
-  deleteSeries(referencia: string): Observable<any> {
+  deleteProducto(referencia: string): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };

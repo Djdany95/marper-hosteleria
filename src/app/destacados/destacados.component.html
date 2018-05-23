@@ -1,13 +1,44 @@
-<div class="card-columns" style="padding-left: 5%;padding-right: 5%">
-    <div class="card" *ngFor="let destacado of destacados">
-        <div class="card-header" style="background-color: #f1404b">{{destacado.categoria}}</div>
-        <img class="card-img-top" src="https://via.placeholder.com/150x150" alt="Card image cap">
+<div class="container" style="padding: 20px;">
+  <h1 class="masVendidos">MÁS VENDIDOS</h1>
+  <div class="row">
+
+    <div class="col-md-6 col-lg-4 col-xl-3" *ngFor="let destacado of destacados.slice(0,12)">
+      <div class="card">
+        <div class="cHeader">
+          <span class="ml-3">{{destacado.categoria}}</span>
+        </div>
+        <img class="card-img-top" [src]="destacado.imageUrl" alt="Card image cap" (click)="modalLightbox(destacado.nombre, destacado.referencia, destacado.imageUrl)">
         <div class="card-body">
-            <h5 class="card-title">{{destacado.nombre}}</h5>
-            <p class="card-text">{{destacado.marca}}</p>
+          <h5 class="card-title">{{destacado.nombre}}</h5>
+          <span class="card-text">{{destacado.marca}}</span>
         </div>
-        <div class="card-footer" style="background-color: #252c41;">
-            <small style="color: #f4f5f9">REF.: {{destacado.referencia}}</small>
+        <div class="cFooter">
+          <small class="ml-3">REF.: {{destacado.referencia}}</small>
         </div>
+      </div>
     </div>
+  </div>
 </div>
+
+<!-- Modal -->
+<div class="modal" id="modalImage" tabindex="-1" role="dialog" aria-labelledby="modalImage" *ngIf="modal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitle">{{modalNombre}}</h5>
+          <button type="button" class="close" (click)="modal=false" aria-label="Close">
+            <span class="equis" aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img [src]="modalImage" [alt]="modalNombre" style="width: 100%; height: 100%;">
+        </div>
+        <div class="modal-footer">
+          <span class="modalRef">REF.: {{modalRef}}</span>
+          <button type="button" class="btn btn-danger btn-sm" (click)="modal=false">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<ng-progress></ng-progress>

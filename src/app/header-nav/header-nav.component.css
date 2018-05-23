@@ -1,5 +1,10 @@
 .navbar {
+    font-family: 'Montserrat'; background-color: #252c41;
     -webkit-box-shadow: 0 -10px 80px 0 #252c41;
     -moz-box-shadow: 0 -10px 80px 0 #252c41;
     box-shadow: 0 -10px 80px 0 #252c41;
+}
+
+.colorDDD{
+    color: #dddfe6
 }

@@ -8,31 +8,31 @@ import { ContactoService } from '../services/contacto.service';
   styleUrls: ['./contacto.component.css']
 })
 export class ContactoComponent {
+  constructor(private contactoService: ContactoService) {}
 
-  constructor(private contactoService: ContactoService) { }
-
-  nameControl: FormControl = new FormControl('', [
-    Validators.required,
-  ]);
+  nameControl: FormControl = new FormControl('', [Validators.required]);
   emailControl: FormControl = new FormControl('', [
     Validators.required,
     Validators.email
   ]);
-  tlfControl: FormControl = new FormControl('', [
-    Validators.required,
-  ]);
-  msgControl: FormControl = new FormControl('', [
-    Validators.required,
-  ]);
+  tlfControl: FormControl = new FormControl('', [Validators.required]);
+  msgControl: FormControl = new FormControl('', [Validators.required]);
 
   enviarMensaje() {
-    this.contactoService.sendFeedback(this.nameControl.value, this.emailControl.value, this.tlfControl.value, this.msgControl.value).subscribe(
-      response => {
-        alert("Mensaje enviado.")
-      },
-      error => {
-        console.log(error)
-      }
-    );
+    this.contactoService
+      .sendFeedback(
+        this.nameControl.value,
+        this.emailControl.value,
+        this.tlfControl.value,
+        this.msgControl.value
+      )
+      .subscribe(
+        response => {
+          alert('Mensaje enviado.');
+        },
+        error => {
+          console.log(error);
+        }
+      );
   }
 }

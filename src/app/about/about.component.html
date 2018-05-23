@@ -1,6 +1,6 @@
-<div class="container" style="height:  100vh">
-    <div class="row" style="height:  100vh">
-        <div class="col-12 col-md-5" style="padding-top: 50px; padding-bottom: 50px; font-family: Montserrat; color: #252c41">
+<div class="container totalH">
+    <div class="row totalH">
+        <div class="col-12 col-md-5 containerDatos">
             <h1>MARPER HOSTELERÍA</h1>
 
             <h4>DATOS</h4>
@@ -8,9 +8,33 @@
             <h4>DATOS</h4>
             <h4>DATOS</h4>
             <h4>DATOS</h4>
+            <br>
+            <h1>Pídenos Presupuesto</h1>
+            <form class="py-3">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="nombre" placeholder="Nombre" [formControl]="nameControl">
+                    <small class="smError" *ngIf="nameControl.hasError('required')">*Obligatorio</small>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" id="email" placeholder="Email" [formControl]="emailControl">
+                    <small class="smError" *ngIf="emailControl.hasError('required')">*Obligatorio</small>
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" id="telefono" placeholder="Teléfono" [formControl]="tlfControl">
+                    <small class="smOpcional">Opcional</small>
+                </div>
+                <div class="form-group">
+                    <textarea type="text" class="form-control" id="msg" placeholder="Mensaje..." [formControl]="msgControl"></textarea>
+                    <small class="smError" *ngIf="msgControl.hasError('required')">*Obligatorio</small>
+                </div>
+
+                <button type="button" class="btn btn-primary" (click)='enviarMensaje()'>Enviar</button>
+            </form>
         </div>
-        <div class="col-7 d-none d-md-block" style="padding-top: 50px; padding-bottom: 50px;">
-            <div #gmap style="width: 100%;height:100%"></div>
+        <div class="col-7 d-none d-md-block containerMapa">
+            <div #gmap class="sombra mapa"></div>
         </div>
     </div>
 </div>
+
+<ng-progress></ng-progress>

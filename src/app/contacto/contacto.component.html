@@ -18,22 +18,24 @@
         <form class="px-4 py-3">
             <div class="form-group">
                 <input type="text" class="form-control" id="nombre" placeholder="Nombre" [formControl]="nameControl">
-                <small style="color:#f1404b" *ngIf="nameControl.hasError('required')">*Obligatorio</small>
+                <small class="smError" *ngIf="nameControl.hasError('required')">*Obligatorio</small>
             </div>
             <div class="form-group">
                 <input type="email" class="form-control" id="email" placeholder="Email" [formControl]="emailControl">
-                <small style="color:#f1404b" *ngIf="emailControl.hasError('required')">*Obligatorio</small>
+                <small class="smError" *ngIf="emailControl.hasError('required')">*Obligatorio</small>
             </div>
             <div class="form-group">
                 <input type="number" class="form-control" id="telefono" placeholder="Teléfono" [formControl]="tlfControl">
-                <small style="color:rgba(37, 44, 65, 0.5)">Opcional</small>
+                <small class="smOpcional">Opcional</small>
             </div>
             <div class="form-group">
-                <input type="text" class="form-control" id="msg" placeholder="Mensaje..." [formControl]="msgControl">
-                <small style="color:#f1404b" *ngIf="msgControl.hasError('required')">*Obligatorio</small>
+                <textarea type="text" class="form-control" id="msg" placeholder="Mensaje..." [formControl]="msgControl"></textarea>
+                <small class="smError" *ngIf="msgControl.hasError('required')">*Obligatorio</small>
             </div>
 
             <button type="button" class="btn btn-primary" (click)='enviarMensaje()'>Enviar</button>
         </form>
     </div>
 </div>
+
+<ng-progress></ng-progress>

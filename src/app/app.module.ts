@@ -16,6 +16,8 @@ import { AdminService } from './services/admin.service';
 import { PortadaComponent } from './portada/portada.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgProgressModule } from '@ngx-progressbar/core';
+import { NgProgressHttpModule } from '@ngx-progressbar/http';
 
 @NgModule({
   declarations: [
@@ -28,21 +30,22 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AboutComponent,
     BannerComponent,
     AdminComponent,
-    PortadaComponent,
+    PortadaComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-
-      //apiKey: 'AIzaSyCw2AfOipJlYd-X5iEESrM4HZwf3-zud_c'
-
+    NgProgressModule.forRoot({
+      thick: true,
+      color: '#f1404b',
+      spinnerPosition: 'left'
+    }),
+    NgProgressHttpModule,
+    // apiKey: 'AIzaSyCw2AfOipJlYd-X5iEESrM4HZwf3-zud_c'
   ],
-  providers: [HttpClient,
-    ProductosService,
-    ContactoService,
-    AdminService],
+  providers: [HttpClient, ProductosService, ContactoService, AdminService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

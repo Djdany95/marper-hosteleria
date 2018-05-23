@@ -10,7 +10,7 @@ export class ContactoService {
   public url: string;
 
   constructor(private _http: HttpClient) {
-    this.url = 'localhost:3678/api/';
+    this.url = 'http://localhost:3678/api/';
   }
 
   sendFeedback(nombre: string, email: string, msg: string, telefono?: number): Observable<any> {

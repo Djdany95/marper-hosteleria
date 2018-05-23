@@ -8,12 +8,18 @@ import { Producto } from '../models/producto';
   styleUrls: ['./destacados.component.css']
 })
 export class DestacadosComponent implements OnInit {
+  destacados: Array<Producto>;
 
-  destacados: Producto[];
+  modal: boolean;
+  modalNombre: string;
+  modalRef: string;
+  modalImage: string;
 
-  constructor(private productoService: ProductosService) { }
+  constructor(private productoService: ProductosService) {}
 
   ngOnInit() {
+    this.modal = false;
+    this.destacados = new Array<Producto>();
     this.getDestacados();
   }
 
@@ -23,9 +29,15 @@ export class DestacadosComponent implements OnInit {
         this.destacados = response.data;
       },
       error => {
-        console.log(error)
+        console.log(error);
       }
     );
   }
 
+  modalLightbox(nombre: string, ref: string, image: string) {
+    this.modalNombre = nombre;
+    this.modalRef = ref;
+    this.modalImage = image;
+    this.modal = true;
+  }
 }

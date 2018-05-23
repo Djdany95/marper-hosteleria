@@ -1,4 +1,8 @@
-<header-nav></header-nav>
-<app-portada *ngIf="portada"></app-portada>
+<app-header-nav (goto)="goto($event)"></app-header-nav>
+<app-portada *ngIf="portada" (goto)="goto($event)"></app-portada>
 <app-about *ngIf="about"></app-about>
-<app-footer class="d-none d-md-block" style="z-index: 0; position: relative"></app-footer>
+<app-catalogo *ngIf="catalogo"></app-catalogo>
+<app-admin *ngIf="admin"></app-admin>
+<app-footer class="d-none d-md-block appFooter" (goto)="goto($event)"></app-footer>
+
+<ng-progress></ng-progress>

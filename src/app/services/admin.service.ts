@@ -9,16 +9,15 @@ export class AdminService {
   public url: string;
 
   constructor(private _http: HttpClient) {
-    this.url = 'localhost:3678/api/';
+    this.url = 'http://localhost:3678/api/';
   }
 
-  login(nombre: string, pass: string): Observable<any> {
+  login(usuario: string, pass: string): Observable<any> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this._http.post(
       this.url + 'login/',
-      { nombre: nombre, pass: pass },
+      { usuario: usuario, pass: pass },
       { headers: headers }
     );
   }
-  
 }
