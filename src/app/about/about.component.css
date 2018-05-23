@@ -1,13 +1,27 @@
-.containerMapa{
-    padding-top: 50px; 
+.containerMapa {
+    padding-top: 50px;
     padding-bottom: 50px;
 }
 
-.mapa{
+.mapa {
     width: 100%;
-    height:100%
+    height: 100%
 }
 
-.containerDatos{
-    padding-top: 50px; padding-bottom: 50px; font-family: Montserrat; color: #252c41
+.containerDatos {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-family: Montserrat;
+    color: #252c41
+}
+
+.display-4 {
+    font-family: Montserrat Subrayada;
+    color: #f1404b
+}
+
+.lead {
+    font-family: Montserrat Subrayada;
+    color: #252c41;
+    padding-left: 10%
 }

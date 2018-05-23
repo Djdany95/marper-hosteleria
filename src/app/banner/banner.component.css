@@ -5,14 +5,19 @@
     box-shadow: 0 -10px 80px 0 #252c41;
 }
 
-.display-4{
-    font-family: Montserrat Subrayada; color: #dddfe6
+.display-4 {
+    font-family: Montserrat Subrayada;
+    color: #dddfe6
 }
 
-.lead{
-    font-family: Montserrat Subrayada; color: #252c41; padding-left: 10%
+.lead {
+    font-family: Montserrat Subrayada;
+    color: #252c41;
+    padding-left: 10%
 }
 
-.btnCatalogo{
-    font-family: Montserrat; color: #252c41; margin-left: 100px;
+.btnCatalogo {
+    font-family: Montserrat;
+    color: #252c41;
+    margin-left: 100px;
 }

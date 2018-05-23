@@ -1,38 +1,50 @@
-.filtroCat{
-    background-color: #252c41; 
+.filtroCat {
+    background-color: #252c41;
     color: #dddfe6;
-    width: 50%; padding-top: 10px;padding-bottom: 10px; border-right: 1px solid black
+    width: 50%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-right: 1px solid black
 }
 
-.filtroCatHover{
+.filtroCatHover {
     background-color: #091125;
-     color: #dddfe6;
-     width: 50%; padding-top: 10px;padding-bottom: 10px; border-right: 1px solid black
-}
-
-.filtroMar{
-    background-color: #252c41; 
     color: #dddfe6;
-    width: 50%; padding-top: 10px;padding-bottom: 10px; border-left: 1px solid black;
+    width: 50%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-right: 1px solid black
 }
 
-.filtroMarHover{
+.filtroMar {
+    background-color: #252c41;
+    color: #dddfe6;
+    width: 50%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-left: 1px solid black;
+}
+
+.filtroMarHover {
     background-color: #091125;
-     color: #dddfe6;
-     width: 50%; padding-top: 10px;padding-bottom: 10px; border-left: 1px solid black;
+    color: #dddfe6;
+    width: 50%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-left: 1px solid black;
 }
 
-.btn-link:hover{
+.btn-link:hover {
     color: #f1404b
 }
 
-.btn-link{
+.btn-link {
     color: #252c41
 }
 
-.filtros{
+.filtros {
     width: 100%;
     overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
