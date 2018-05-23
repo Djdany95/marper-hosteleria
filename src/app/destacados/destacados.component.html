@@ -1,0 +1,13 @@
+<div class="card-columns" style="padding-left: 5%;padding-right: 5%">
+    <div class="card" *ngFor="let destacado of destacados">
+        <div class="card-header" style="background-color: #f1404b">{{destacado.categoria}}</div>
+        <img class="card-img-top" src="https://via.placeholder.com/150x150" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{destacado.nombre}}</h5>
+            <p class="card-text">{{destacado.marca}}</p>
+        </div>
+        <div class="card-footer" style="background-color: #252c41;">
+            <small style="color: #f4f5f9">REF.: {{destacado.referencia}}</small>
+        </div>
+    </div>
+</div>
