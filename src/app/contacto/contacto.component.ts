@@ -23,12 +23,16 @@ export class ContactoComponent {
       .sendFeedback(
         this.nameControl.value,
         this.emailControl.value,
-        this.tlfControl.value,
-        this.msgControl.value
+        this.msgControl.value,
+        this.tlfControl.value
       )
       .subscribe(
         response => {
           alert('Mensaje enviado.');
+          this.emailControl.setValue('');
+          this.nameControl.setValue('');
+          this.msgControl.setValue('');
+          this.tlfControl.setValue('');
         },
         error => {
           console.log(error);

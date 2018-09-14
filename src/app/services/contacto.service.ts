@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { api } from '../constants/api-url.constants';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class ContactoService {
   public url: string;
 
   constructor(private _http: HttpClient) {
-    this.url = 'http://localhost:3678/api/';
+    this.url = api;
   }
 
   sendFeedback(nombre: string, email: string, msg: string, telefono?: number): Observable<any> {
